@@ -1,53 +1,32 @@
-# 🚀 ViT5: Tinh chỉnh mô hình sinh câu hỏi trắc nghiệm tự động (Question Generation)
+# ViT5: Tinh chỉnh mô hình sinh câu hỏi trắc nghiệm tự động (Question Generation)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.12+-orange.svg)
 ![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-yellow.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 📌 Giới thiệu dự án
-Dự án này tập trung vào việc tinh chỉnh (Fine-tuning) mô hình ngôn ngữ ViT5 (phiên bản kiến trúc Transformer dành riêng cho tiếng Việt) để thực hiện nhiệm vụ sinh câu hỏi trắc nghiệm tự động từ một đoạn văn bản nguồn. 
+## Giới thiệu dự án
+Dự án này tập trung vào việc nghiên cứu và tinh chỉnh (Fine-tuning) mô hình ngôn ngữ ViT5 (kiến trúc Transformer dành cho tiếng Việt) để thực hiện nhiệm vụ sinh câu hỏi trắc nghiệm tự động từ văn bản nguồn. Hệ thống cho phép điều khiển mức độ tư duy của câu hỏi dựa trên thang đo nhận thức Bloom. 
 
-Đây là kết quả của quá trình thực tập nghiên cứu, nhằm hỗ trợ giáo viên và các đơn vị giáo dục số hóa ngân hàng đề thi một cách nhanh chóng và chính xác.
+Đây là sản phẩm trong học phần Thực tập nghề nghiệp 1 tại Khoa Công nghệ Thông tin - Trường ĐH Sư phạm TP.HCM.
 
-## ✨ Các tính năng chính
-- Đa cấp độ nhận thức: Điều khiển mô hình sinh câu hỏi theo các mức độ Bloom (Nhận biết, Thông hiểu, Vận dụng).
-- Định dạng chuẩn: Kết quả đầu ra được đóng gói dưới dạng JSON, dễ dàng tích hợp vào các hệ thống LMS.
-- Giao diện trực quan: Hỗ trợ demo thông qua Gradio.
-- Xử lý đa lĩnh vực: Vận hành tốt trên các môn học như Ngữ văn, Địa lý, Tin học, Sinh học.
+## Các tính năng nổi bật
+- Phân tầng nhận thức: Hỗ trợ sinh câu hỏi theo 3 mức độ: Nhận biết, Thông hiểu và Vận dụng.
+- Đa lĩnh vực: Hoạt động tốt trên các ngữ liệu Địa lý, Tin học, Ngữ văn và Sinh học.
+- Định dạng chuẩn: Đầu ra luôn đảm bảo cấu trúc JSON giúp dễ dàng tích hợp vào các hệ thống LMS.
+- Giao diện trực quan: Tích hợp Web UI bằng Gradio để tương tác thời gian thực.
 
-## 📊 Kết quả thực nghiệm (Metrics)
-Sau giai đoạn **Ultra Training** (15 Epochs), mô hình đạt được các chỉ số ấn tượng:
+## Kết quả thực nghiệm (Metrics)
+Sau giai đoạn Ultra Training (15 Epochs) với các kỹ thuật tối ưu hóa như Label Smoothing và Cosine Decay, mô hình đạt được:
 - BLEU-4: 27.42
 - ROUGE-L: 45.21
-- Thời gian phản hồi trung bình: 1.52 giây/câu hỏi.
-## 🛠 Cấu trúc thư mục
-├── data/               # Chứa tập dữ liệu huấn luyện (13.000 samples)
-├── models/             # Chứa checkpoints và trọng số mô hình sau huấn luyện
-├── notebooks/          # Google Colab notebooks (Train & Eval)
-├── src/                # Mã nguồn chính (Tiền xử lý, Model class)
-├── app.py              # File chạy giao diện Gradio
-├── requirements.txt    # Các thư viện cần thiết
-└── README.md           # Hướng dẫn sử dụng dự án
+- Tốc độ phản hồi: ~1.52 giây/câu hỏi.
 
-🚀 Hướng dẫn cài đặt và sử dụng
-1. Cài đặt môi trường
-Bash
-
-git clone [https://github.com/your-username/ViT5-Question-Gen.git](https://github.com/your-username/ViT5-Question-Gen.git)
-cd ViT5-Question-Gen
-pip install -r requirements.txt
-2. Sử dụng Giao diện (Gradio)
-Bash
-
-python app.py
-📸 Hình ảnh Demo
-(Bạn hãy chèn ảnh chụp màn hình giao diện web Gradio ở Chương 3 vào đây)
-
-💡 Bài học rút ra (Error Analysis)
-Trong quá trình phát triển, dự án đã giải quyết bài toán Ảo tưởng logic (Logical Hallucination) bằng cách tối ưu hóa cơ chế Beam Search và kỹ thuật Label Smoothing, giúp mô hình bám sát ngữ cảnh nguồn hơn.
-
-👨‍💻 Tác giả
-Dương Lâm Khang - Sinh viên Khoa Công nghệ Thông tin, Đại học Sư phạm TP.HCM.
-
-Giảng viên hướng dẫn: ThS. Lương Trần Ngọc Khiết & CH. Lê Thanh Thoại.
-
+## Cấu trúc thư mục dự án
+```text
+├── data/               # Tập dữ liệu huấn luyện (13.000 mẫu)
+├── src/                # Mã nguồn tiền xử lý và cấu hình mô hình
+├── notebooks/          # Google Colab notebooks cho huấn luyện và đánh giá
+├── app.py              # Script khởi chạy giao diện Gradio
+├── requirements.txt    # Danh sách thư viện cần thiết
+└── README.md           # Tài liệu hướng dẫn dự án

@@ -21,7 +21,6 @@ Sau giai đoạn **Ultra Training** (15 Epochs), mô hình đạt được các 
 - ROUGE-L: 45.21
 - Thời gian phản hồi trung bình: 1.52 giây/câu hỏi.
 ## 🛠 Cấu trúc thư mục
-```text
 ├── data/               # Chứa tập dữ liệu huấn luyện (13.000 samples)
 ├── models/             # Chứa checkpoints và trọng số mô hình sau huấn luyện
 ├── notebooks/          # Google Colab notebooks (Train & Eval)

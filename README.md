@@ -30,3 +30,29 @@ Sau giai đoạn Ultra Training (15 Epochs) với các kỹ thuật tối ưu h�
 ├── app.py              # Script khởi chạy giao diện Gradio
 ├── requirements.txt    # Danh sách thư viện cần thiết
 └── README.md           # Tài liệu hướng dẫn dự án
+```
+🚀 Hướng dẫn cài đặt và sử dụng
+1. Cài đặt môi trường
+```Bash
+
+git clone https://github.com/duonglamkhang/ViT5-Question-Gen.git
+cd ViT5-Question-Gen
+pip install -r requirements.txt
+```
+2. Chạy Demo
+```Bash
+
+python app.py
+```
+💡 Phân tích lỗi và Hạn chế (Error Analysis)
+Trong quá trình thực nghiệm, hệ thống đã được phân tích sâu về lỗi Ảo tưởng logic (Logical Hallucination) khi xử lý các ngữ cảnh phức tạp (ví dụ: nhầm lẫn các hệ quả kinh tế tại Đông Nam Bộ). Việc nhận diện lỗi này giúp định hướng tối ưu hóa cơ chế Attention trong tương lai.
+
+👨‍💻 Tác giả
+Sinh viên: Dương Lâm Khang
+
+Khoa: Công nghệ Thông tin - ĐH Sư phạm TP.HCM
+
+Giảng viên hướng dẫn: ThS. Lương Trần Ngọc Khiết & CH. Lê Thanh Thoại.
+
+📄 Bản quyền
+Dự án này được phát hành dưới giấy phép MIT.

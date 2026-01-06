@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.12+-orange.svg)
-![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-yellow.svg)
+![Google Colab](https://img.shields.io/badge/Run%20on-Colab-blue?logo=google-colab)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## Giới thiệu dự án
@@ -31,28 +31,25 @@ Sau giai đoạn Ultra Training (15 Epochs) với các kỹ thuật tối ưu h�
 ├── requirements.txt    # Danh sách thư viện cần thiết
 └── README.md           # Tài liệu hướng dẫn dự án
 ```
-🚀 Hướng dẫn cài đặt và sử dụng
-1. Cài đặt môi trường
-```Bash
+## Hướng dẫn sử dụng trên Google Colab
+Dự án được tối ưu hóa để chạy trực tiếp trên môi trường Google Colab nhằm tận dụng hạ tầng GPU miễn phí.
+1. Mở file notebook trong thư mục notebooks/.
 
-git clone https://github.com/duonglamkhang/ViT5-Question-Gen.git
-cd ViT5-Question-Gen
-pip install -r requirements.txt
-```
-2. Chạy Demo
-```Bash
+2. Nhấn vào nút "Open in Colab" (nếu có) hoặc tải file .ipynb lên Colab cá nhân.
 
-python app.py
-```
-💡 Phân tích lỗi và Hạn chế (Error Analysis)
+3. Chạy các ô mã (cells) để cài đặt thư viện và tải trọng số mô hình.
+
+4. Kích hoạt giao diện Gradio bằng cách chạy ô mã chứa demo.launch(share=True).
+
+## Phân tích lỗi và Hạn chế (Error Analysis)
 Trong quá trình thực nghiệm, hệ thống đã được phân tích sâu về lỗi Ảo tưởng logic (Logical Hallucination) khi xử lý các ngữ cảnh phức tạp (ví dụ: nhầm lẫn các hệ quả kinh tế tại Đông Nam Bộ). Việc nhận diện lỗi này giúp định hướng tối ưu hóa cơ chế Attention trong tương lai.
 
-👨‍💻 Tác giả
+## Tác giả
 Sinh viên: Dương Lâm Khang
 
 Khoa: Công nghệ Thông tin - ĐH Sư phạm TP.HCM
 
 Giảng viên hướng dẫn: ThS. Lương Trần Ngọc Khiết & CH. Lê Thanh Thoại.
 
-📄 Bản quyền
+# Bản quyền
 Dự án này được phát hành dưới giấy phép MIT.
